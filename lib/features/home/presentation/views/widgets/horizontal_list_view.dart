@@ -12,13 +12,14 @@ class HorizontalListView extends StatelessWidget {
       height: MediaQuery.of(context).size.height * .25,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.only(left: 30.0),
+        padding: const EdgeInsets.only(left: 20.0),
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: HorizontalListViewItem(
               onPressed: () {},
-              image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s',
+              image:
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s',
             ),
           );
         },
