@@ -1,7 +1,9 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'rating_row.dart';
 
 class BestSellerItem extends StatelessWidget {
@@ -11,9 +13,12 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 50.0, left: 30.0, top: 20.0),
-      child: SizedBox(
+    return GestureDetector(
+      onTap: () {
+        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 50.0, left: 30.0, top: 20.0),
         height: MediaQuery.of(context).size.height * 0.15,
         child: Row(
           children: [

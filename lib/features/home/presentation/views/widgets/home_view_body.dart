@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'best_seller_sliver_view.dart';
 import 'best_seller_text.dart';
-import 'custom_app_bar.dart';
+import 'home_view_app_bar.dart';
 import 'horizontal_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomAppBar()),
+        SliverToBoxAdapter(child: HomeViewAppBar()),
         SliverToBoxAdapter(child: HorizontalListView()),
         SliverToBoxAdapter(child: BestSellerText()),
         BestSellerSliverList(),

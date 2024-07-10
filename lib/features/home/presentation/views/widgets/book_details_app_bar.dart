@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class BookDetailsAppBar extends StatelessWidget {
+  const BookDetailsAppBar({
     super.key,
   });
 
@@ -14,15 +15,20 @@ class CustomAppBar extends StatelessWidget {
           right: 25.0, left: 30.0, top: 40.0, bottom: 35.0),
       child: Row(
         children: [
-          Image.asset(
-            kLogoImage,
-            width: 85,
+          IconButton(
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
+            icon: const Icon(
+              FontAwesomeIcons.x,
+              size: 22,
+            ),
           ),
-          const Expanded(child: SizedBox()),
+          const Spacer(),
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              FontAwesomeIcons.magnifyingGlass,
+              Icons.shopping_cart_outlined,
             ),
           ),
         ],

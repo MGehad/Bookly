@@ -19,7 +19,8 @@ class HorizontalListViewItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             color: Colors.grey,
-            image: DecorationImage(image: NetworkImage(image), fit: BoxFit.fill),
+            image:
+                DecorationImage(image: NetworkImage(image), fit: BoxFit.fill),
           ),
         ),
         Positioned(
