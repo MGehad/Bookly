@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_action.dart';
-import 'book_details_list_view.dart';
 import 'rating_row.dart';
 
-class BookDataColumn extends StatelessWidget {
-  const BookDataColumn({super.key});
+class BookDetailsColumn extends StatelessWidget {
+  const BookDetailsColumn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,24 +42,11 @@ class BookDataColumn extends StatelessWidget {
           style: Styles.textStyle18
               .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.7)),
         ),
-        const SizedBox(height: 17),
+        const SizedBox(height: 16),
         const RatingRow(),
-        const SizedBox(height: 37),
+        const SizedBox(height: 35),
         const BookAction(),
-        const SizedBox(height: 51),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              "You can also like",
-              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
-            ),
-          ),
-        ),
-        const BookDetailsListView()
       ],
     );
   }
 }
-

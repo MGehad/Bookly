@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BookDetailsListView extends StatelessWidget {
-  const BookDetailsListView({
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({
     super.key,
   });
 
@@ -14,7 +14,7 @@ class BookDetailsListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Container(
-            margin: const EdgeInsets.only(right: 17),
+            margin: const EdgeInsets.only(right: 12),
             width: MediaQuery.of(context).size.width * .18,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15.0)),

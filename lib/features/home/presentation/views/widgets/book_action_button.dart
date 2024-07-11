@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookActionButton extends StatelessWidget {
@@ -25,7 +26,7 @@ class BookActionButton extends StatelessWidget {
         ),
         backgroundColor: MaterialStatePropertyAll(backgroundColor),
         shape: MaterialStatePropertyAll(
-          ContinuousRectangleBorder(borderRadius: borderRadius),
+          RoundedRectangleBorder(borderRadius: borderRadius),
         ),
       ),
       child: Center(
@@ -34,7 +35,7 @@ class BookActionButton extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 16,
           ),
         ),
       ),
