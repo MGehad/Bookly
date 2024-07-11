@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import 'book_action.dart';
 import 'book_details_list_view.dart';
 import 'rating_row.dart';
 
@@ -12,7 +13,7 @@ class BookDataColumn extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: MediaQuery.of(context).size.height * 0.32,
+          height: MediaQuery.of(context).size.height * 0.3,
           width: MediaQuery.of(context).size.width * .42,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22),
@@ -23,7 +24,7 @@ class BookDataColumn extends StatelessWidget {
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(top: 45),
+          padding: const EdgeInsets.only(top: 35),
           width: MediaQuery.of(context).size.width * .75,
           child: const Center(
             child: Text(
@@ -45,52 +46,7 @@ class BookDataColumn extends StatelessWidget {
         const SizedBox(height: 17),
         const RatingRow(),
         const SizedBox(height: 37),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 60,
-              width: MediaQuery.of(context).size.width * .4,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                ),
-              ),
-              child: const Center(
-                child: Text(
-                  '19.99€',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 60,
-              width: MediaQuery.of(context).size.width * .4,
-              decoration: const BoxDecoration(
-                color: Color(0xffEF8262),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
-              ),
-              child: const Center(
-                child: Text(
-                  'Free preview',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+        const BookAction(),
         const SizedBox(height: 51),
         Padding(
           padding: const EdgeInsets.only(bottom: 10.0),
@@ -107,3 +63,4 @@ class BookDataColumn extends StatelessWidget {
     );
   }
 }
+

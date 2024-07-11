@@ -10,7 +10,7 @@ class BookDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 40.0, bottom: 35.0),
+      padding: const EdgeInsets.only(top: 40.0, bottom: 30.0),
       child: Row(
         children: [
           IconButton(
@@ -18,16 +18,14 @@ class BookDetailsAppBar extends StatelessWidget {
               GoRouter.of(context).pop();
             },
             icon: const Icon(
-              FontAwesomeIcons.x,
-              size: 22,
+              Icons.close,
+              size: 30,
             ),
           ),
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-            ),
+            icon: const Icon(Icons.shopping_cart_outlined),
           ),
         ],
       ),
