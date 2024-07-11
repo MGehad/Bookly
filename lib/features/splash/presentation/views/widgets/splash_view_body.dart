@@ -1,8 +1,8 @@
-import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {

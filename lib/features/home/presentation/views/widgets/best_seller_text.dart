@@ -1,5 +1,5 @@
-import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/utils/styles.dart';
 
 class BestSellerText extends StatelessWidget {
   const BestSellerText({

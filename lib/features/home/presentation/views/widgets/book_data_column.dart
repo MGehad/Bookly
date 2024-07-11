@@ -1,7 +1,8 @@
-import 'package:bookly/features/home/presentation/views/widgets/rating_row.dart';
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import 'book_details_list_view.dart';
+import 'rating_row.dart';
 
 class BookDataColumn extends StatelessWidget {
   const BookDataColumn({super.key});
@@ -92,7 +93,7 @@ class BookDataColumn extends StatelessWidget {
         ),
         const SizedBox(height: 51),
         Padding(
-          padding: const EdgeInsets.only(left: 30.0,bottom: 10.0),
+          padding: const EdgeInsets.only(bottom: 10.0),
           child: Align(
             alignment: Alignment.centerLeft,
             child: Text(
@@ -101,27 +102,7 @@ class BookDataColumn extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: const EdgeInsets.only(left: 25),
-          height: MediaQuery.of(context).size.height * .13,
-          child: ListView.builder(
-            clipBehavior: Clip.none,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                width: MediaQuery.of(context).size.width * .18,
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s'),
-                  ),
-                ),
-              );
-            },
-          ),
-        )
+        const BookDetailsListView()
       ],
     );
   }

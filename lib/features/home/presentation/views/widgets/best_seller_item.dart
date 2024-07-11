@@ -1,9 +1,9 @@
-import 'package:bookly/constants.dart';
-import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/styles.dart';
 import 'rating_row.dart';
 
 class BestSellerItem extends StatelessWidget {
