@@ -42,7 +42,7 @@ class BookDetailsColumn extends StatelessWidget {
           style: Styles.textStyle18
               .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.7)),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 14),
         const RatingRow(),
         const SizedBox(height: 35),
         const BookAction(),

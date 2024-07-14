@@ -20,7 +20,7 @@ class BookDetailsBody extends StatelessWidget {
               children: [
                 const BookDetailsAppBar(),
                 const BookDetailsColumn(),
-                const Expanded(child: SizedBox(height: 30)),
+                const Expanded(child: SizedBox(height: 50)),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: Align(
@@ -33,7 +33,7 @@ class BookDetailsBody extends StatelessWidget {
                   ),
                 ),
                 const SimilarBooksListView(),
-                const SizedBox(height: 30)
+                const SizedBox(height: 40)
               ],
             ),
           )
