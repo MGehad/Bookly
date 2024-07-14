@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'best_seller_item.dart';
+import 'book_item.dart';
 
 class BestSellerSliverList extends StatelessWidget {
   const BestSellerSliverList({
@@ -10,7 +10,10 @@ class BestSellerSliverList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(delegate: SliverChildBuilderDelegate(
       (context, index) {
-        return BestSellerItem();
+        return Padding(
+          padding: const EdgeInsets.only(right: 50.0, left: 30.0,),
+          child: BookItem(),
+        );
       },
     ));
   }

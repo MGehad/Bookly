@@ -6,8 +6,8 @@ import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
 import 'rating_row.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class BookItem extends StatelessWidget {
+  const BookItem({
     super.key,
   });
 
@@ -18,7 +18,7 @@ class BestSellerItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailsView);
       },
       child: Container(
-        margin: const EdgeInsets.only(right: 50.0, left: 30.0, top: 20.0),
+        margin: const EdgeInsets.only( top: 20.0),
         height: MediaQuery.of(context).size.height * 0.15,
         child: Row(
           children: [
