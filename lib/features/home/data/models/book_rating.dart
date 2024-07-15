@@ -1,5 +1,5 @@
 class BookRating {
-  final double? averageRating;
+  final num? averageRating;
   final int? ratingsCount;
 
   BookRating({required this.averageRating, required this.ratingsCount});

@@ -6,7 +6,8 @@ class ListPrice {
 
   factory ListPrice.fromJson(json) {
     return ListPrice(
-        amount: json['listPrice']['amount'],
-        currencyCode: json['listPrice']['currencyCode']);
+      amount: json?['amount'],
+      currencyCode: json?['currencyCode'],
+    );
   }
 }

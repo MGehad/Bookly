@@ -6,7 +6,10 @@ import '../models/book_model.dart';
 import 'home_repo.dart';
 
 class HomeRepoImplementation implements HomeRepo {
-  final ApiService _apiService = ApiService();
+  final ApiService _apiService;
+
+  HomeRepoImplementation({required ApiService apiService})
+      : _apiService = apiService;
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
