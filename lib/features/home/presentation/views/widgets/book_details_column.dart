@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model.dart';
 import 'book_action.dart';
 import 'rating_row.dart';
 
 class BookDetailsColumn extends StatelessWidget {
-  const BookDetailsColumn({super.key});
+  final BookModel book;
+
+  const BookDetailsColumn({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +19,17 @@ class BookDetailsColumn extends StatelessWidget {
           width: MediaQuery.of(context).size.width * .42,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22),
-            image: const DecorationImage(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s')),
+            image: DecorationImage(
+                fit: BoxFit.fill, image: NetworkImage(book.thumbnail!)),
           ),
         ),
         Container(
           padding: const EdgeInsets.only(top: 35),
           width: MediaQuery.of(context).size.width * .75,
-          child: const Center(
+          child: Center(
             child: Text(
-              'The Jungle Book',
-              style: TextStyle(
+              book.title!,
+              style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.normal,
                 fontFamily: kGTSectraFineFont,
@@ -38,12 +39,14 @@ class BookDetailsColumn extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'J.K. Rowling',
+          book.authors!.first,
           style: Styles.textStyle18
               .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.7)),
         ),
         const SizedBox(height: 14),
-        const RatingRow(),
+        RatingRow(
+          bookRating: book.bookRating!,
+        ),
         const SizedBox(height: 35),
         const BookAction(),
       ],

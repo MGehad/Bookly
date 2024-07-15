@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_rating.dart';
 
 class RatingRow extends StatelessWidget {
+  final BookRating bookRating;
+
   const RatingRow({
     super.key,
+    required this.bookRating,
   });
 
   @override
@@ -18,16 +22,15 @@ class RatingRow extends StatelessWidget {
           color: Color(0xffFFDD4F),
         ),
         const SizedBox(width: 5),
-        const Text(
-          '4.8',
-          style: TextStyle(fontSize: 16),
+        Text(
+          bookRating.averageRating.toString(),
+          style: const TextStyle(fontSize: 16),
         ),
         const SizedBox(width: 7),
         Text(
-          '(2390)',
-          style: Styles.textStyle14.copyWith(
-              color: const Color(0xffFFFFFF).withOpacity(0.5)
-          ),
+          '(${bookRating.ratingsCount})',
+          style: Styles.textStyle14
+              .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.5)),
         ),
       ],
     );

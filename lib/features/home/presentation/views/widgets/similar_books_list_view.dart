@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SimilarBooksListView extends StatelessWidget {
+  final String thumbnail;
+
   const SimilarBooksListView({
     super.key,
+    required this.thumbnail,
   });
 
   @override
@@ -16,11 +19,10 @@ class SimilarBooksListView extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(right: 12),
             width: MediaQuery.of(context).size.width * .18,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15.0)),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(15.0)),
               image: DecorationImage(
-                image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s'),
+                image: NetworkImage(thumbnail),
               ),
             ),
           );
