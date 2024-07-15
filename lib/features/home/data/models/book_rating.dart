@@ -6,8 +6,8 @@ class BookRating {
 
   factory BookRating.fromJson(json) {
     return BookRating(
-      averageRating: json['averageRating'],
-      ratingsCount: json['ratingsCount'],
+      averageRating: json['averageRating'] ?? 0,
+      ratingsCount: json['ratingsCount'] ?? 0,
     );
   }
 }

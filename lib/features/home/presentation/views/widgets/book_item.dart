@@ -53,7 +53,7 @@ class BookItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    book.authors!.first,
+                    (book.authors == null) ? "No Author" : book.authors![0],
                     style: Styles.textStyle14.copyWith(
                         color: const Color(0xffFFFFFF).withOpacity(0.7)),
                   ),
@@ -62,12 +62,16 @@ class BookItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "${book.listPrice!.amount.toString()} ${book.listPrice!.currencyCode.toString()}",
+                        (book.listPrice!.amount == 0)
+                            ? "Free"
+                            : "${book.listPrice!.amount.toString()} ${book.listPrice!.currencyCode.toString()}",
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(width: 30),
-                      RatingRow(bookRating: book.bookRating!,),
+                      RatingRow(
+                        bookRating: book.bookRating!,
+                      ),
                     ],
                   )
                 ],

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'best_seller_sliver_view.dart';
 import 'custom_text_widget.dart';
 import 'home_view_app_bar.dart';
 import 'horizontal_list_view.dart';
+import 'newest_sliver_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -12,6 +12,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(child: HomeViewAppBar()),
         SliverToBoxAdapter(child: HorizontalListView()),
@@ -22,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
             child: CustomTextWidget(text: 'Newest'),
           ),
         ),
-        BestSellerSliverList(),
+        NewestSliverList(),
       ],
     );
   }
