@@ -6,12 +6,12 @@ import '../models/book_model.dart';
 import 'home_repo.dart';
 
 class HomeRepoImplementation implements HomeRepo {
-  final ApiService apiService = ApiService();
+  final ApiService _apiService = ApiService();
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      var data = await apiService.get(
+      var data = await _apiService.get(
           endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=all');
       List items = data['items'];
       List<BookModel> books = [];
@@ -31,8 +31,8 @@ class HomeRepoImplementation implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data =
-          await apiService.get(endPoint: 'volumes?Filtering=free-ebooks&q=all');
+      var data = await _apiService.get(
+          endPoint: 'volumes?Filtering=free-ebooks&q=all');
       List items = data['items'];
       List<BookModel> books = [];
       for (var item in items) {
