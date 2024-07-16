@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/widgets/image_widget.dart';
 import '../../../data/models/book_model.dart';
 import 'book_action.dart';
 import 'rating_row.dart';
@@ -14,21 +15,19 @@ class BookDetailsColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        ImageWidget(
           height: MediaQuery.of(context).size.height * 0.3,
           width: MediaQuery.of(context).size.width * .42,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(22),
-            image: DecorationImage(
-                fit: BoxFit.fill, image: NetworkImage(book.thumbnail!)),
-          ),
+          thumbnail: book.thumbnail!,
+          borderRadius: 15,
         ),
         Container(
           padding: const EdgeInsets.only(top: 35),
-          width: MediaQuery.of(context).size.width * .75,
+          width: MediaQuery.of(context).size.width * .8,
           child: Center(
             child: Text(
               book.title!,
+              textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.normal,

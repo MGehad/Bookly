@@ -11,9 +11,8 @@ class BookDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: BookDetailsBody(
-        book: book,
-      )),
+        child: BookDetailsBody(book: book),
+      ),
     );
   }
 }

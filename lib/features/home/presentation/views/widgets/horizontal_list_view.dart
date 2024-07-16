@@ -1,9 +1,9 @@
-import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/data/models/book_model.dart';
-import 'package:bookly/features/home/presentation/view_model/feature_books_cubit/feature_books_cubit.dart';
-import 'package:bookly/features/home/presentation/view_model/feature_books_cubit/feature_books_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/utils/widgets/error_message.dart';
+import '../../../data/models/book_model.dart';
+import '../../view_model/feature_books_cubit/feature_books_cubit.dart';
+import '../../view_model/feature_books_cubit/feature_books_state.dart';
 import 'horizontal_list_view_item.dart';
 
 class HorizontalListView extends StatelessWidget {
@@ -34,12 +34,7 @@ class HorizontalListView extends StatelessWidget {
             },
           );
         } else if (state is FeatureBooksFailureState) {
-          return Center(
-            child: Text(
-              state.errMessage,
-              style: Styles.textStyle20,
-            ),
-          );
+          return ErrorMessage(message: state.errMessage);
         } else {
           return const Center(child: CircularProgressIndicator());
         }

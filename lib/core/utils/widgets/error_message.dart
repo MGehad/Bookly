@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+import '../styles.dart';
+
+class ErrorMessage extends StatelessWidget {
+  final String message;
+
+  const ErrorMessage({
+    super.key,
+    required this.message,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        message,
+        style: Styles.textStyle20,
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+}

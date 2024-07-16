@@ -1,7 +1,7 @@
-import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../data/models/book_model.dart';
 import 'book_details_app_bar.dart';
 import 'book_details_column.dart';
 import 'similar_books_list_view.dart';

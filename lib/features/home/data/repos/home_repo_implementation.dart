@@ -1,7 +1,7 @@
-import 'package:bookly/core/utils/api_service.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
+import '../../../../core/utils/api_service.dart';
 import '../models/book_model.dart';
 import 'home_repo.dart';
 
@@ -15,7 +15,8 @@ class HomeRepoImplementation implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await _apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=all');
+          endPoint:
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=all');
       List items = data['items'];
       List<BookModel> books = [];
       for (var item in items) {
@@ -35,7 +36,7 @@ class HomeRepoImplementation implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await _apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=all');
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
       List items = data['items'];
       List<BookModel> books = [];
       for (var item in items) {

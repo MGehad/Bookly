@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/widgets/image_widget.dart';
 import '../../../data/models/book_model.dart';
 import 'rating_row.dart';
 
@@ -26,14 +28,11 @@ class BookItem extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.15,
         child: Row(
           children: [
-            Container(
+            ImageWidget(
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * .2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                image: DecorationImage(
-                    fit: BoxFit.fill, image: NetworkImage(book.thumbnail!)),
-              ),
+              thumbnail: book.thumbnail!,
+              borderRadius: 5.0,
             ),
             const SizedBox(width: 30),
             Expanded(

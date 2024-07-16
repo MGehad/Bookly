@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/utils/styles.dart';
+import '../../../../../core/utils/widgets/image_widget.dart';
 import '../../../data/models/book_model.dart';
 import '../../view_model/newest_books_cubit/newest_books_cubit.dart';
 import '../../view_model/newest_books_cubit/newest_books_state.dart';
@@ -23,15 +24,13 @@ class SimilarBooksListView extends StatelessWidget {
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Container(
-                  margin: const EdgeInsets.only(right: 15),
-                  width: MediaQuery.of(context).size.width * .2,
-                  decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: NetworkImage(books[index].thumbnail!),
-                    ),
+                return Padding(
+                  padding: const EdgeInsets.only(right: 12.0),
+                  child: ImageWidget(
+                    borderRadius: 5.0,
+                    thumbnail: books[index].thumbnail!,
+                    height: MediaQuery.of(context).size.height * .1,
+                    width: MediaQuery.of(context).size.width * .2,
                   ),
                 );
               },
