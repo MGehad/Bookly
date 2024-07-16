@@ -19,7 +19,7 @@ class BookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsView);
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: book);
       },
       child: Container(
         margin: const EdgeInsets.only(top: 20.0),
@@ -55,7 +55,10 @@ class BookItem extends StatelessWidget {
                   Text(
                     (book.authors == null) ? "No Author" : book.authors![0],
                     style: Styles.textStyle14.copyWith(
-                        color: const Color(0xffFFFFFF).withOpacity(0.7)),
+                      color: const Color(0xffFFFFFF).withOpacity(0.7),
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
                   ),
                   const SizedBox(height: 5),
                   Row(
