@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalListViewItem extends StatelessWidget {
@@ -14,13 +15,14 @@ class HorizontalListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: MediaQuery.of(context).size.width * .35,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15.0),
-            color: Colors.grey,
-            image:
-                DecorationImage(image: NetworkImage(image), fit: BoxFit.fill),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(15.0),
+          child: CachedNetworkImage(
+            width: MediaQuery.of(context).size.width * .35,
+            height: MediaQuery.of(context).size.height * .245,
+            fit: BoxFit.fill,
+            imageUrl: image,
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
         Positioned(
