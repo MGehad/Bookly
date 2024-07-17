@@ -28,7 +28,7 @@ class BookModel {
       authors:
           (json['volumeInfo']['authors'] as List<dynamic>?)?.cast<String>(),
       categories:
-          (json['volumeInfo']['categories'] as List<dynamic>?)?.cast<String>(),
+          (json['volumeInfo']?['categories'] as List<dynamic>?)?.cast<String>()??[],
       thumbnail: json['volumeInfo']['imageLinks']?['thumbnail']??"",
       previewLink: json['volumeInfo']['previewLink'],
       buyLink: json['saleInfo']['buyLink'],
