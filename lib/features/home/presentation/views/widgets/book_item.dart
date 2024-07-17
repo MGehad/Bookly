@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
+import '../../../../../core/models/book_model.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/utils/widgets/image_widget.dart';
-import '../../../data/models/book_model.dart';
 import 'rating_row.dart';
 
 class BookItem extends StatelessWidget {
@@ -52,7 +52,7 @@ class BookItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    (book.authors == null) ? "No Author" : book.authors![0],
+                    (book.authors!.isEmpty) ? "No Author" : book.authors![0],
                     style: Styles.textStyle14.copyWith(
                       color: const Color(0xffFFFFFF).withOpacity(0.7),
                     ),

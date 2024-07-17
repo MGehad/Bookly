@@ -1,4 +1,6 @@
+import 'package:bookly/core/utils/functions/open_url.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../core/utils/widgets/image_widget.dart';
 
@@ -30,7 +32,9 @@ class HorizontalListViewItem extends StatelessWidget {
             bottom: 8.0,
             right: 8.0,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                openUrl(context, previewLink);
+              },
               icon: const Icon(Icons.play_arrow),
               style: ButtonStyle(
                 shape: const MaterialStatePropertyAll(

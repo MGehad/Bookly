@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../home/data/models/book_model.dart';
-import '../../../../home/data/models/book_rating.dart';
-import '../../../../home/data/models/list_price.dart';
+import '../../../../../core/models/book_model.dart';
+import '../../../../../core/models/book_rating.dart';
+import '../../../../../core/models/list_price.dart';
 import '../../../../home/presentation/views/widgets/book_item.dart';
 
 class SearchBooksResultsList extends StatelessWidget {
@@ -17,7 +17,7 @@ class SearchBooksResultsList extends StatelessWidget {
             authors: ["Mohamed Gehad"],
             categories: ['categories'],
             thumbnail:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s",
             previewLink: 'previewLink',
             buyLink: 'buyLink',
             listPrice: ListPrice(amount: 15, currencyCode: 'EGP'),

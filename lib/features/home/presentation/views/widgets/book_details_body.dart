@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/models/book_model.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../data/models/book_model.dart';
 import 'book_details_app_bar.dart';
 import 'book_details_section.dart';
 import 'similar_books_list_view.dart';
@@ -21,7 +21,9 @@ class BookDetailsBody extends StatelessWidget {
             hasScrollBody: false,
             child: Column(
               children: [
-                const BookDetailsAppBar(),
+                BookDetailsAppBar(
+                  buyUrl: book.buyLink,
+                ),
                 BookDetailsSection(book: book),
                 const Expanded(child: SizedBox(height: 50)),
                 Padding(

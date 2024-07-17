@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../core/models/book_model.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/widgets/image_widget.dart';
-import '../../../data/models/book_model.dart';
 
 class SimilarBooksItem extends StatelessWidget {
   const SimilarBooksItem({

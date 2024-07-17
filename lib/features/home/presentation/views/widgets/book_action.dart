@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../data/models/book_model.dart';
+import '../../../../../core/models/book_model.dart';
+import '../../../../../core/utils/functions/open_url.dart';
 import 'book_action_button.dart';
 
 class BookAction extends StatelessWidget {
@@ -26,14 +27,17 @@ class BookAction extends StatelessWidget {
               : "${book.listPrice!.amount.toString()} ${book.listPrice!.currencyCode.toString()}",
           textColor: Colors.black,
         ),
-        const BookActionButton(
-          backgroundColor: Color(0xffEF8262),
-          borderRadius: BorderRadius.only(
+        BookActionButton(
+          backgroundColor: const Color(0xffEF8262),
+          borderRadius: const BorderRadius.only(
             topRight: Radius.circular(18),
             bottomRight: Radius.circular(18),
           ),
           buttonText: 'Free preview',
           textColor: Colors.white,
+          onPressed: () {
+            openUrl(context, book.previewLink!);
+          },
         ),
       ],
     );

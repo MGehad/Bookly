@@ -1,9 +1,15 @@
+import 'package:bookly/core/utils/functions/open_url.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utils/functions/snack_bar.dart';
+
 class BookDetailsAppBar extends StatelessWidget {
+  final String? buyUrl;
+
   const BookDetailsAppBar({
     super.key,
+    required this.buyUrl,
   });
 
   @override
@@ -23,7 +29,13 @@ class BookDetailsAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              if (buyUrl != null) {
+                openUrl(context, buyUrl!);
+              } else {
+                snackBar(context, 'Not Available!!');
+              }
+            },
             icon: const Icon(Icons.shopping_cart_outlined),
           ),
         ],

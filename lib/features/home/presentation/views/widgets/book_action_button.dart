@@ -5,6 +5,7 @@ class BookActionButton extends StatelessWidget {
   final Color textColor;
   final Color backgroundColor;
   final BorderRadius borderRadius;
+  final VoidCallback? onPressed;
 
   const BookActionButton({
     super.key,
@@ -12,12 +13,13 @@ class BookActionButton extends StatelessWidget {
     required this.textColor,
     required this.borderRadius,
     required this.backgroundColor,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         minimumSize: MaterialStatePropertyAll(
           Size(MediaQuery.of(context).size.width * .37,

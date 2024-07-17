@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../core/models/book_model.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/widgets/error_message.dart';
-import '../../../data/models/book_model.dart';
 import '../../view_model/feature_books_cubit/feature_books_cubit.dart';
 import '../../view_model/feature_books_cubit/feature_books_state.dart';
 import 'horizontal_list_view_item.dart';

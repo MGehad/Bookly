@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../../constants.dart';
+import '../../../../../core/models/book_model.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/utils/widgets/image_widget.dart';
-import '../../../data/models/book_model.dart';
 import 'book_action.dart';
 import 'rating_row.dart';
 
@@ -40,7 +40,7 @@ class BookDetailsSection extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          (book.authors == null) ? "No Author" : book.authors![0],
+          (book.authors!.isEmpty) ? "No Author" : book.authors![0],
           style: Styles.textStyle18
               .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.7)),
         ),
