@@ -43,6 +43,8 @@ class BookDetailsSection extends StatelessWidget {
           (book.authors!.isEmpty) ? "No Author" : book.authors![0],
           style: Styles.textStyle18
               .copyWith(color: const Color(0xffFFFFFF).withOpacity(0.7)),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 14),
         RatingRow(

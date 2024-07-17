@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../constants.dart';
-import '../../../../../core/models/book_model.dart';
-import '../../../../../core/utils/app_router.dart';
-import '../../../../../core/utils/styles.dart';
-import '../../../../../core/utils/widgets/image_widget.dart';
-import 'rating_row.dart';
+import '../../../constants.dart';
+import '../../models/book_model.dart';
+import '../app_router.dart';
+import '../styles.dart';
+import 'image_widget.dart';
+import '../../../features/home/presentation/views/widgets/rating_row.dart';
 
 class BookItem extends StatelessWidget {
   final BookModel book;
@@ -24,7 +24,7 @@ class BookItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: book);
       },
       child: Container(
-        margin: const EdgeInsets.only(top: 20.0),
+        margin: const EdgeInsets.symmetric(vertical: 10.0),
         height: MediaQuery.of(context).size.height * 0.15,
         child: Row(
           children: [
