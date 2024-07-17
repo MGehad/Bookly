@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/models/book_model.dart';
-import '../../../../../core/models/book_rating.dart';
-import '../../../../../core/models/list_price.dart';
+import '../../../../../core/utils/widgets/error_message.dart';
 import '../../../../home/presentation/views/widgets/book_item.dart';
+import '../../view_model/search_books_cubit/search_books_cubit.dart';
+import '../../view_model/search_books_cubit/search_books_state.dart';
 
 class SearchBooksResultsList extends StatelessWidget {
   const SearchBooksResultsList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return BookItem(
-          book: BookModel(
-            title: "Mohamed Gehad in the University",
-            authors: ["Mohamed Gehad"],
-            categories: ['categories'],
-            thumbnail:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFr8-NiY73WX6HiFwflVVKkRBipr76pcV2g&s",
-            previewLink: 'previewLink',
-            buyLink: 'buyLink',
-            listPrice: ListPrice(amount: 15, currencyCode: 'EGP'),
-            bookRating: BookRating(averageRating: 4.9, ratingsCount: 7100),
-          ),
-        );
+    return BlocBuilder<SearchBooksCubit, SearchBooksState>(
+      builder: (context, state) {
+        if (state is SearchBooksSuccessState) {
+          List<BookModel> books = state.books;
+          return ListView.builder(
+            itemCount: books.length,
+            itemBuilder: (context, index) => BookItem(book: books[index]),
+          );
+        } else if (state is SearchBooksFailureState) {
+          return ErrorMessage(
+            message: state.errMessage,
+          );
+        } else if (state is SearchBooksInitialState) {
+          return const Center(child: Text("Start search for a book..."));
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
       },
     );
   }
