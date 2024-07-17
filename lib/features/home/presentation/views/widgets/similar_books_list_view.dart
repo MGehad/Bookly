@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
-import 'package:bookly/features/home/presentation/view_model/similar_books_cubit/similar_books_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../../core/utils/widgets/image_widget.dart';
 import '../../../data/models/book_model.dart';
+import '../../view_model/similar_books_cubit/similar_books_cubit.dart';
+import '../../view_model/similar_books_cubit/similar_books_state.dart';
+import 'similar_books_item.dart';
 
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({
@@ -24,15 +24,7 @@ class SimilarBooksListView extends StatelessWidget {
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 12.0),
-                  child: ImageWidget(
-                    borderRadius: 5.0,
-                    thumbnail: books[index].thumbnail!,
-                    height: MediaQuery.of(context).size.height * .1,
-                    width: MediaQuery.of(context).size.width * .2,
-                  ),
-                );
+                return SimilarBooksItem(book: books[index]);
               },
             );
           } else if (state is SimilarBooksFailureState) {

@@ -6,10 +6,10 @@ import '../../../data/models/book_model.dart';
 import 'book_action.dart';
 import 'rating_row.dart';
 
-class BookDetailsColumn extends StatelessWidget {
+class BookDetailsSection extends StatelessWidget {
   final BookModel book;
 
-  const BookDetailsColumn({super.key, required this.book});
+  const BookDetailsSection({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,10 @@ class BookDetailsColumn extends StatelessWidget {
             child: Text(
               book.title!,
               textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 28,
                 fontWeight: FontWeight.normal,
                 fontFamily: kGTSectraFineFont,
               ),

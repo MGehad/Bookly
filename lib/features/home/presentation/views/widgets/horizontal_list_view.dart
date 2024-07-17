@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/widgets/error_message.dart';
 import '../../../data/models/book_model.dart';
 import '../../view_model/feature_books_cubit/feature_books_cubit.dart';
@@ -27,8 +29,12 @@ class HorizontalListView extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: HorizontalListViewItem(
-                  onPressed: () {},
+                  onTap: () {
+                    GoRouter.of(context)
+                        .push(AppRouter.kBookDetailsView, extra: books[index]);
+                  },
                   image: books[index].thumbnail!,
+                  previewLink: books[index].previewLink!,
                 ),
               );
             },

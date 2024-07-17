@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../data/models/book_model.dart';
 import 'book_details_app_bar.dart';
-import 'book_details_column.dart';
+import 'book_details_section.dart';
 import 'similar_books_list_view.dart';
 
 class BookDetailsBody extends StatelessWidget {
@@ -22,7 +22,7 @@ class BookDetailsBody extends StatelessWidget {
             child: Column(
               children: [
                 const BookDetailsAppBar(),
-                BookDetailsColumn(book: book),
+                BookDetailsSection(book: book),
                 const Expanded(child: SizedBox(height: 50)),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 15.0, top: 10.0),
