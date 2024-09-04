@@ -1,4 +1,3 @@
-
 import '../../../../../core/models/book_model.dart';
 
 class FeatureBooksState {}

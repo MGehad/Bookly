@@ -1,5 +1,5 @@
-import 'package:bookly/core/utils/functions/open_url.dart';
 import 'package:flutter/material.dart';
+import '../../../../../core/utils/functions/open_url.dart';
 import '../../../../../core/utils/widgets/image_widget.dart';
 
 class HorizontalListViewItem extends StatelessWidget {

@@ -1,7 +1,7 @@
-import 'package:bookly/core/utils/functions/open_url.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/utils/functions/open_url.dart';
 import '../../../../../core/utils/functions/snack_bar.dart';
 
 class BookDetailsAppBar extends StatelessWidget {

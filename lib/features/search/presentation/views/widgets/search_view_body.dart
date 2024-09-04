@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../../../../home/presentation/views/widgets/custom_text_widget.dart';
 import 'custom_search_widget.dart';
 import 'search_books_results_list.dart';
