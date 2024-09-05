@@ -1,4 +1,4 @@
-import '../../../../../core/models/book_model.dart';
+import '../../../domain/models/book_model.dart';
 
 class FeatureBooksState {}
 

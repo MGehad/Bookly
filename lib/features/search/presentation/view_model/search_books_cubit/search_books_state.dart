@@ -1,4 +1,4 @@
-import '../../../../../core/models/book_model.dart';
+import '../../../../home/domain/models/book_model.dart';
 
 class SearchBooksState {}
 

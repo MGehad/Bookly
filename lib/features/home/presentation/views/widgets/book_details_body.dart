@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/models/book_model.dart';
+import '../../../domain/models/book_model.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_details_app_bar.dart';
 import 'book_details_section.dart';

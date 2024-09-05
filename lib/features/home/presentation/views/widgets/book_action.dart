@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/models/book_model.dart';
+import '../../../domain/models/book_model.dart';
 import '../../../../../core/utils/functions/open_url.dart';
 import 'book_action_button.dart';
 
