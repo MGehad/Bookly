@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
-import '../models/book_model.dart';
+import '../../data/models/book_model.dart';
 import '../../../../core/utils/api_service.dart';
 import 'home_repo.dart';
 

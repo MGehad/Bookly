@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import '../constants.dart';
-import '../../../features/home/domain/models/book_model.dart';
+import '../../../features/home/data/models/book_model.dart';
 import '../app_router.dart';
 import '../styles.dart';
 import 'image_widget.dart';

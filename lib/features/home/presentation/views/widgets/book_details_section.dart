@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/constants.dart';
-import '../../../domain/models/book_model.dart';
+import '../../../data/models/book_model.dart';
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/utils/widgets/image_widget.dart';
 import 'book_action.dart';
