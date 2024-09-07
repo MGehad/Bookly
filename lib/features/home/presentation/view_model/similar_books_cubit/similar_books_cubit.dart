@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../domain/repos/home_repo.dart';
+import '../../../domain/repos/home_remote_repo.dart';
 import 'similar_books_state.dart';
 
 class SimilarBooksCubit extends Cubit<SimilarBooksState> {
   SimilarBooksCubit(this.homeRepo) : super(SimilarBooksInitialState());
-  final HomeRepo homeRepo;
+  final HomeRemoteRepo homeRepo;
 
   void getSimilarBooks(String category) async {
     emit(SimilarBooksLoadingState());

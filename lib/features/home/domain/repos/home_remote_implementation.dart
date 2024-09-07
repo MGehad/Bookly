@@ -1,14 +1,16 @@
+import 'package:bookly/core/utils/constants.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
+import '../../../../core/utils/functions/hive_books.dart';
 import '../../data/models/book_model.dart';
 import '../../../../core/utils/api_service.dart';
-import 'home_repo.dart';
+import 'home_remote_repo.dart';
 
-class HomeRepoImplementation implements HomeRepo {
+class HomeRemoteImplementation implements HomeRemoteRepo {
   final ApiService _apiService;
 
-  HomeRepoImplementation({required ApiService apiService})
+  HomeRemoteImplementation({required ApiService apiService})
       : _apiService = apiService;
 
   @override
@@ -21,6 +23,9 @@ class HomeRepoImplementation implements HomeRepo {
       for (var item in items) {
         books.add(BookModel.fromJson(item));
       }
+
+      HiveBooks.addBooksLocal(books, newestBooksBox);
+
       return Right(books);
     } catch (e) {
       if (e is DioError) {
@@ -41,6 +46,9 @@ class HomeRepoImplementation implements HomeRepo {
       for (var item in items) {
         books.add(BookModel.fromJson(item));
       }
+
+      HiveBooks.addBooksLocal(books, featuresBooksBox);
+
       return Right(books);
     } catch (e) {
       if (e is DioError) {
@@ -63,6 +71,9 @@ class HomeRepoImplementation implements HomeRepo {
       for (var item in items) {
         books.add(BookModel.fromJson(item));
       }
+
+      HiveBooks.addBooksLocal(books, similarBooksBox);
+
       return Right(books);
     } catch (e) {
       if (e is DioError) {

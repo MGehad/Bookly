@@ -1,14 +1,27 @@
+import 'package:hive/hive.dart';
+
 import 'book_rating.dart';
 import 'list_price.dart';
 
+part 'book_model.g.dart';
+
+@HiveType(typeId: 0)
 class BookModel {
+  @HiveField(0)
   final String? title;
+  @HiveField(1)
   final List<String>? authors;
+  @HiveField(2)
   final List<String>? categories;
+  @HiveField(3)
   final String? thumbnail;
+  @HiveField(4)
   final String? previewLink;
+  @HiveField(5)
   final String? buyLink;
+  @HiveField(6)
   final ListPrice? listPrice;
+  @HiveField(7)
   final BookRating? bookRating;
 
   BookModel({
