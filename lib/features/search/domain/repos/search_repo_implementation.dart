@@ -25,7 +25,7 @@ class SearchRepoImplementation implements SearchRepo {
       }
       return Right(books);
     } catch (e) {
-      if (e is DioError) {
+      if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
       } else {
         return Left(
