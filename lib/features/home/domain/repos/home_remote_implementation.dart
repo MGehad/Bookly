@@ -1,6 +1,3 @@
-import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
-import '../../../../core/errors/failure.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/functions/hive_books.dart';
 import '../../data/models/book_model.dart';
@@ -14,73 +11,48 @@ class HomeRemoteImplementation implements HomeRemoteRepo {
       : _apiService = apiService;
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
-    try {
-      var data = await _apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=all');
-      List items = data['items'];
-      List<BookModel> books = [];
-      for (var item in items) {
-        books.add(BookModel.fromJson(item));
-      }
-
-      await HiveBooks.addBooksLocal(books, newestBooksBox);
-
-      return Right(books);
-    } catch (e) {
-      if (e is DioError) {
-        return Left(ServerFailure.fromDioError(e));
-      } else {
-        return Left(ServerFailure(errMessage: e.toString()));
-      }
+  Future<List<BookModel>> fetchNewestBooks() async {
+    var data = await _apiService.get(
+        endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=all');
+    List items = data['items'];
+    List<BookModel> books = [];
+    for (var item in items) {
+      books.add(BookModel.fromJson(item));
     }
+
+    await HiveBooks.addBooksLocal(books, newestBooksBox);
+
+    return books;
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
-    try {
-      var data = await _apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
-      List items = data['items'];
-      List<BookModel> books = [];
-      for (var item in items) {
-        books.add(BookModel.fromJson(item));
-      }
-
-      await HiveBooks.addBooksLocal(books, featuresBooksBox);
-
-      return Right(books);
-    } catch (e) {
-      if (e is DioError) {
-        return Left(ServerFailure.fromDioError(e));
-      } else {
-        return Left(ServerFailure(errMessage: e.toString()));
-      }
+  Future<List<BookModel>> fetchFeaturedBooks() async {
+    var data = await _apiService.get(
+        endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
+    List items = data['items'];
+    List<BookModel> books = [];
+    for (var item in items) {
+      books.add(BookModel.fromJson(item));
     }
+
+    await HiveBooks.addBooksLocal(books, featuresBooksBox);
+
+    return books;
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
-      {required String category}) async {
-    try {
-      var data = await _apiService.get(
-          endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$category');
-      List items = data['items'];
-      List<BookModel> books = [];
-      for (var item in items) {
-        books.add(BookModel.fromJson(item));
-      }
-
-      await HiveBooks.addBooksLocal(books, similarBooksBox);
-
-      return Right(books);
-    } catch (e) {
-      if (e is DioError) {
-        return Left(ServerFailure.fromDioError(e));
-      } else {
-        return Left(ServerFailure(errMessage: e.toString()));
-      }
+  Future<List<BookModel>> fetchSimilarBooks({required String category}) async {
+    var data = await _apiService.get(
+        endPoint:
+            'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$category');
+    List items = data['items'];
+    List<BookModel> books = [];
+    for (var item in items) {
+      books.add(BookModel.fromJson(item));
     }
+
+    await HiveBooks.addBooksLocal(books, similarBooksBox);
+
+    return books;
   }
 }

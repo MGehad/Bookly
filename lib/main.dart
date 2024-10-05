@@ -9,9 +9,9 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/constants.dart';
 import 'core/utils/service_locater.dart';
-import 'features/home/domain/repos/home_remote_implementation.dart';
 import 'features/home/domain/cubits/feature_books_cubit/feature_books_cubit.dart';
 import 'features/home/domain/cubits/newest_books_cubit/newest_books_cubit.dart';
+import 'features/home/domain/repos/home_repo_implementation.dart';
 
 void main() async {
   setupServiceLocator();
@@ -37,12 +37,12 @@ class Bookly extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeatureBooksCubit(
-            getIt.get<HomeRemoteImplementation>(),
+            getIt.get<HomeRepoImplementation>(),
           )..getFeatureBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
-            getIt.get<HomeRemoteImplementation>(),
+            getIt.get<HomeRepoImplementation>(),
           )..getNewestBooks(),
         )
       ],

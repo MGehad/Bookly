@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../repos/home_remote_repo.dart';
+import '../../repos/home_repo.dart';
 import 'newest_books_state.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksState> {
   NewestBooksCubit(this.homeRepo) : super(NewestBooksInitialState());
-  final HomeRemoteRepo homeRepo;
+  final HomeRepo homeRepo;
 
   void getNewestBooks() async {
     emit(NewestBooksLoadingState());

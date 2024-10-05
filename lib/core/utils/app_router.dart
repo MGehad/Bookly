@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/home/domain/repos/home_remote_implementation.dart';
 import '../../features/home/domain/cubits/similar_books_cubit/similar_books_cubit.dart';
+import '../../features/home/domain/repos/home_repo_implementation.dart';
 import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/search/domain/repos/search_repo_implementation.dart';
@@ -30,7 +30,7 @@ abstract class AppRouter {
         BookModel book = state.extra as BookModel;
         return BlocProvider(
           create: (context) => SimilarBooksCubit(
-            getIt.get<HomeRemoteImplementation>(),
+            getIt.get<HomeRepoImplementation>(),
           ),
           child: BookDetailsView(
             book: book,
