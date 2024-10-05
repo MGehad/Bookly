@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/domain/repos/home_local_implementation.dart';
-import 'package:bookly/features/home/domain/repos/home_remote_implementation.dart';
+import 'package:bookly/features/home/data/repos/home_local_implementation.dart';
+import 'package:bookly/features/home/data/repos/home_remote_implementation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
-import '../../data/models/book_model.dart';
-import 'home_repo.dart';
+import '../models/book_model.dart';
+import '../../domain/repos/home_repo.dart';
 
 class HomeRepoImplementation implements HomeRepo {
   final HomeLocalImplementation homeLocalImplementation;

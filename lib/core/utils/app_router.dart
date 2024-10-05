@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/home/domain/cubits/similar_books_cubit/similar_books_cubit.dart';
-import '../../features/home/domain/repos/home_repo_implementation.dart';
+import '../../features/home/presentation/manger/cubits/similar_books_cubit/similar_books_cubit.dart';
+import '../../features/home/data/repos/home_repo_implementation.dart';
 import '../../features/home/presentation/views/book_details_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/search/domain/repos/search_repo_implementation.dart';
-import '../../features/search/domain/cubits/search_books_cubit/search_books_cubit.dart';
+import '../../features/search/presentation/manger/cubits/search_books_cubit/search_books_cubit.dart';
 import '../../features/search/presentation/views/search_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/home/data/models/book_model.dart';

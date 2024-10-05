@@ -1,8 +1,8 @@
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/functions/hive_books.dart';
-import '../../data/models/book_model.dart';
+import '../models/book_model.dart';
 import '../../../../core/utils/api_service.dart';
-import 'home_remote_repo.dart';
+import '../../domain/repos/home_remote_repo.dart';
 
 class HomeRemoteImplementation implements HomeRemoteRepo {
   final ApiService _apiService;

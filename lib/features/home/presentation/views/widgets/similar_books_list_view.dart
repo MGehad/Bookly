@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/book_model.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../domain/cubits/similar_books_cubit/similar_books_cubit.dart';
-import '../../../domain/cubits/similar_books_cubit/similar_books_state.dart';
+import '../../manger/cubits/similar_books_cubit/similar_books_cubit.dart';
+import '../../manger/cubits/similar_books_cubit/similar_books_state.dart';
 import 'similar_books_item.dart';
 
 class SimilarBooksListView extends StatelessWidget {

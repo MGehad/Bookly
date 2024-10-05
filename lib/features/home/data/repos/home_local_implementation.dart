@@ -1,8 +1,8 @@
 import 'package:bookly/core/utils/constants.dart';
 
 import '../../../../core/utils/functions/hive_books.dart';
-import '../../data/models/book_model.dart';
-import 'home_local_repo.dart';
+import '../models/book_model.dart';
+import '../../domain/repos/home_local_repo.dart';
 
 class HomeLocalImplementation implements HomeLocalRepo {
   HomeLocalImplementation();
