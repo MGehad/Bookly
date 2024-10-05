@@ -11,27 +11,33 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromDioError(DioError dioError) {
     switch (dioError.type) {
-      case DioErrorType.connectTimeout:
+      case DioExceptionType.connectionTimeout:
         return ServerFailure(errMessage: "Connection Timeout with ApiServer");
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         return ServerFailure(errMessage: "Send Timeout with ApiServer");
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
         return ServerFailure(errMessage: "Receive Timeout with ApiServer");
-      case DioErrorType.response:
+      case DioExceptionType.badResponse:
         return ServerFailure.fromResponseError(
             dioError.response!, dioError.response!.statusCode!);
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         return ServerFailure(errMessage: "Connection Timeout with ApiServer");
-      case DioErrorType.other:
-        if (dioError.message.contains('SocketException')) {
-          return ServerFailure(errMessage: "No Internet Connection");
-        } else {
-          return ServerFailure(
-              errMessage: "UnExpected Error, Please try again later!!");
-        }
+      case DioExceptionType.unknown:
+        return ServerFailure(
+          errMessage: "UnExpected Error, Please try again later!!",
+        );
+      case DioExceptionType.badCertificate:
+        return ServerFailure(
+          errMessage: "UnExpected Error, Please try again later!!",
+        );
+      case DioExceptionType.connectionError:
+        return ServerFailure(
+          errMessage: "No Internet Connection",
+        );
       default:
         return ServerFailure(
-            errMessage: "UnExpected Error, Please try again later!!");
+          errMessage: "UnExpected Error, Please try again later!!",
+        );
     }
   }
 

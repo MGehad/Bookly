@@ -21,12 +21,12 @@ class BookActionButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: ButtonStyle(
-        minimumSize: MaterialStatePropertyAll(
+        minimumSize: WidgetStatePropertyAll(
           Size(MediaQuery.of(context).size.width * .37,
               MediaQuery.of(context).size.height * .06),
         ),
-        backgroundColor: MaterialStatePropertyAll(backgroundColor),
-        shape: MaterialStatePropertyAll(
+        backgroundColor: WidgetStatePropertyAll(backgroundColor),
+        shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(borderRadius: borderRadius),
         ),
       ),

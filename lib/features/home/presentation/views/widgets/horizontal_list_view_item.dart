@@ -35,10 +35,10 @@ class HorizontalListViewItem extends StatelessWidget {
               },
               icon: const Icon(Icons.play_arrow),
               style: ButtonStyle(
-                shape: const MaterialStatePropertyAll(
+                shape: const WidgetStatePropertyAll(
                   CircleBorder(),
                 ),
-                backgroundColor: MaterialStatePropertyAll(
+                backgroundColor: WidgetStatePropertyAll(
                   Colors.white.withOpacity(0.1),
                 ),
               ),
