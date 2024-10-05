@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/book_model.dart';
 import '../../../../../core/utils/widgets/error_message.dart';
-import '../../view_model/newest_books_cubit/newest_books_cubit.dart';
-import '../../view_model/newest_books_cubit/newest_books_state.dart';
+import '../../../domain/cubits/newest_books_cubit/newest_books_cubit.dart';
+import '../../../domain/cubits/newest_books_cubit/newest_books_state.dart';
 import '../../../../../core/utils/widgets/book_item.dart';
 
 class NewestSliverList extends StatelessWidget {
@@ -38,7 +38,8 @@ class NewestSliverList extends StatelessWidget {
           );
         } else {
           return const SliverToBoxAdapter(
-              child: Center(child: CircularProgressIndicator()),);
+            child: Center(child: CircularProgressIndicator()),
+          );
         }
       },
     );

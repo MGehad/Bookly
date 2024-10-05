@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import '../../../domain/repos/search_repo.dart';
+import '../../repos/search_repo.dart';
 import 'search_books_state.dart';
 
 class SearchBooksCubit extends Cubit<SearchBooksState> {

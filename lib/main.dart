@@ -10,8 +10,8 @@ import 'core/utils/app_router.dart';
 import 'core/utils/constants.dart';
 import 'core/utils/service_locater.dart';
 import 'features/home/domain/repos/home_remote_implementation.dart';
-import 'features/home/presentation/view_model/feature_books_cubit/feature_books_cubit.dart';
-import 'features/home/presentation/view_model/newest_books_cubit/newest_books_cubit.dart';
+import 'features/home/domain/cubits/feature_books_cubit/feature_books_cubit.dart';
+import 'features/home/domain/cubits/newest_books_cubit/newest_books_cubit.dart';
 
 void main() async {
   setupServiceLocator();
@@ -21,9 +21,9 @@ void main() async {
   Hive.registerAdapter(BookRatingAdapter());
   Hive.registerAdapter(ListPriceAdapter());
 
-  await Hive.openBox(featuresBooksBox);
-  await Hive.openBox(newestBooksBox);
-  await Hive.openBox(similarBooksBox);
+  await Hive.openBox<BookModel>(featuresBooksBox);
+  await Hive.openBox<BookModel>(newestBooksBox);
+  await Hive.openBox<BookModel>(similarBooksBox);
 
   runApp(const Bookly());
 }

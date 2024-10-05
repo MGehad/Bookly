@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../home/data/models/book_model.dart';
 import '../../../../../core/utils/widgets/error_message.dart';
 import '../../../../../core/utils/widgets/book_item.dart';
-import '../../view_model/search_books_cubit/search_books_cubit.dart';
-import '../../view_model/search_books_cubit/search_books_state.dart';
+import '../../../domain/cubits/search_books_cubit/search_books_cubit.dart';
+import '../../../domain/cubits/search_books_cubit/search_books_state.dart';
 
 class SearchBooksResultsList extends StatelessWidget {
   const SearchBooksResultsList({super.key});

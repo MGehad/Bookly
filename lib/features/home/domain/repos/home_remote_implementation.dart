@@ -1,7 +1,7 @@
-import 'package:bookly/core/utils/constants.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/errors/failure.dart';
+import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/functions/hive_books.dart';
 import '../../data/models/book_model.dart';
 import '../../../../core/utils/api_service.dart';
@@ -24,7 +24,7 @@ class HomeRemoteImplementation implements HomeRemoteRepo {
         books.add(BookModel.fromJson(item));
       }
 
-      HiveBooks.addBooksLocal(books, newestBooksBox);
+      await HiveBooks.addBooksLocal(books, newestBooksBox);
 
       return Right(books);
     } catch (e) {
@@ -47,7 +47,7 @@ class HomeRemoteImplementation implements HomeRemoteRepo {
         books.add(BookModel.fromJson(item));
       }
 
-      HiveBooks.addBooksLocal(books, featuresBooksBox);
+      await HiveBooks.addBooksLocal(books, featuresBooksBox);
 
       return Right(books);
     } catch (e) {
@@ -72,7 +72,7 @@ class HomeRemoteImplementation implements HomeRemoteRepo {
         books.add(BookModel.fromJson(item));
       }
 
-      HiveBooks.addBooksLocal(books, similarBooksBox);
+      await HiveBooks.addBooksLocal(books, similarBooksBox);
 
       return Right(books);
     } catch (e) {
